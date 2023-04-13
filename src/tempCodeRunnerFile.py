@@ -1,0 +1,2 @@
+from selenium.webdriver.support import expected_conditions as EC
+# wait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//span[@class='select2-container--below']//option[text()='Программная инженерия']"))).click()
