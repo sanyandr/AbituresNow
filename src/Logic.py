@@ -1,18 +1,19 @@
 import re
+#count number of max concourse groups for student
 def defineGroups(abiture):
     return len(re.findall(r'<li>\d+', abiture)) + 1
 
+#count number of students with such priority in list
 def countByPriority(abitures, priority):
     suits = 0
     stringPriority = str(priority)
-    print(abitures[0])
-    if ('<li>' + stringPriority not in abitures[0].strip()): print("HUUUUUUI")
     for abiture in abitures:
         if priority < defineGroups(abiture):
-            if ('<li>' + stringPriority) and ('/ ' + stringPriority + ' /') not in abiture:
+            if ('<li>' + stringPriority) not in abiture and ('/ ' + stringPriority + ' /') not in abiture:
                 suits += 1
     return suits
 
+#read file and write students to list, then count with priority
 def calculateAbitures(priority):
     abitures = []
     stringAbiture = ''
@@ -35,7 +36,3 @@ def calculateAbitures(priority):
     # закрываем файл
     file1.close
     return countByPriority(abitures, priority)
-
-
-#ВЫЗОВ базы
-print(calculateAbitures(2))

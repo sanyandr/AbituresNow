@@ -1,2 +1,2 @@
-import Parser
-Parser.getByCriterias('Конкурс 3', 1)
+import interfacev2
+interfacev2.buildInterface()
